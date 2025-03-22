@@ -1,0 +1,8 @@
+{
+  "buildCommand": "next build",
+  "installCommand": "pnpm install --no-strict-peer-dependencies",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "crons": []
+}
+

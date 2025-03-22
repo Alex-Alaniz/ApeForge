@@ -1,0 +1,53 @@
+"use client"
+
+import Link from "next/link"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
+import { useState } from "react"
+
+export function Navbar() {
+  const pathname = usePathname()
+  const [isHovered, setIsHovered] = useState(false)
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Tools", path: "/ForgeTools" },
+    { name: "ApeSmiths", path: "/apesmiths" },
+    { name: "Faq", path: "/faq" },
+  ]
+
+  return (
+    <header className="container mx-auto p-4 flex justify-between items-center">
+      <Link href="/" className="flex items-center gap-2 group">
+        <Image src="/images/apechain-icon-white.svg" alt="ApeForge Logo" width={40} height={40} />
+        <span className="font-bold text-xl relative overflow-hidden">
+          <span className="inline-block transition-transform duration-300 group-hover:translate-y-[-100%]">
+            APEFORGE
+          </span>
+          <span className="absolute top-0 left-0 text-blue-500 transition-transform duration-300 translate-y-[100%] group-hover:translate-y-0">
+            APEFORGE
+          </span>
+        </span>
+      </Link>
+      <nav className="hidden md:flex gap-6">
+        {navItems.map((item) => (
+          <Link
+            key={item.path}
+            href={item.path}
+            className={`relative ${pathname === item.path ? "text-blue-500" : "text-white"}`}
+            onMouseEnter={() => setHoveredItem(item.path)}
+            onMouseLeave={() => setHoveredItem(null)}
+          >
+            <span className="relative z-10">{item.name}</span>
+            {hoveredItem === item.path && (
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 animate-[wipe-in_0.3s_ease-out]"></span>
+            )}
+          </Link>
+        ))}
+      </nav>
+    </header>
+  )
+}
+
