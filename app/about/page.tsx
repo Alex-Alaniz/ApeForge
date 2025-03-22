@@ -10,10 +10,15 @@ export default function AboutPage() {
       <Navbar />
 
       <main className="container mx-auto px-4 py-8 md:py-16">
-        <div className="text-center mb-4 md:mb-8">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-5xl 2xl:text-6xl font-bold">
-            About <InteractiveParticleText text="APEFORGE" size="medium" className="inline-block" />
-          </h1>
+        <div className="flex flex-col items-center mb-4 md:mb-8">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-2">
+            <div>
+              <span className="text-3xl md:text-4xl lg:text-6xl xl:text-5xl 2xl:text-6xl font-bold">About</span>
+            </div>
+            <div>
+              <InteractiveParticleText text="APEFORGE" size="medium" className="inline-block" />
+            </div>
+          </div>
         </div>
 
         <div className="max-w-3xl mx-auto">

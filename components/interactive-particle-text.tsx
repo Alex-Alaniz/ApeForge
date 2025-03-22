@@ -289,8 +289,8 @@ export function InteractiveParticleText({
   return (
     <canvas
       ref={canvasRef}
-      className={`${className} cursor-pointer select-none max-w-full`}
-      style={{ display: "block" }}
+      className={`${className} cursor-pointer select-none max-w-full align-middle`}
+      style={{ display: "inline-block", verticalAlign: "middle" }}
     />
   )
 }

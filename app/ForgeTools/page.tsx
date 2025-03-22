@@ -13,11 +13,15 @@ export default function ForgeToolsPage() {
       <Navbar />
 
       <main className="container mx-auto px-4 py-8 md:py-12">
-        <div className="text-center mb-4 md:mb-6">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl 2xl:text-5xl font-bold">
-            <InteractiveParticleText text="APEFORGE" size="medium" className="inline-block" />{" "}
-            <span className="text-blue-500">Tools</span>
-          </h1>
+        <div className="flex flex-col items-center mb-4 md:mb-6">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-2">
+            <div>
+              <InteractiveParticleText text="APEFORGE" size="medium" className="inline-block" />
+            </div>
+            <div>
+              <span className="text-blue-500 text-3xl md:text-4xl lg:text-5xl xl:text-4xl 2xl:text-5xl font-bold">Tools</span>
+            </div>
+          </div>
         </div>
         <p className="text-lg md:text-xl xl:text-lg 2xl:text-xl text-center mb-6 md:mb-8 max-w-3xl mx-auto">
           Powerful tools being forged for the ApeChain ecosystem
