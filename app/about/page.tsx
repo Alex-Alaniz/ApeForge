@@ -9,25 +9,25 @@ export default function AboutPage() {
       {/* Navbar */}
       <Navbar />
 
-      <main className="container mx-auto px-4 py-16">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold">
+      <main className="container mx-auto px-4 py-8 md:py-16">
+        <div className="text-center mb-4 md:mb-8">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold">
             About <InteractiveParticleText text="APEFORGE" size="medium" className="inline-block" />
           </h1>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-8 md:mb-12">
             <Image
               src="/images/apechain-icon-outlined-white.png"
               alt="ApeChain Logo"
-              width={150}
-              height={150}
-              className="h-auto"
+              width={120}
+              height={120}
+              className="h-auto w-24 md:w-32 lg:w-auto"
             />
           </div>
 
-          <div className="space-y-6 text-lg">
+          <div className="space-y-4 md:space-y-6 text-base md:text-lg">
             <p>
               ApeForge is a platform dedicated to building and developing tools for the ApeChain ecosystem. Our mission
               is to forge the future of blockchain technology by creating innovative solutions that empower developers
@@ -45,7 +45,7 @@ export default function AboutPage() {
               stages of development. We categorize our projects into three stages:
             </p>
 
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="list-disc pl-6 space-y-1 md:space-y-2">
               <li>
                 <strong>ApeSteel</strong> - Completed projects that are fully forged and ready for use
               </li>

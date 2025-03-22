@@ -26,14 +26,24 @@ export function InteractiveParticleText({
   const [isMobile, setIsMobile] = useState(false)
   const pathname = usePathname()
 
-  // Determine dimensions based on size
+  // Determine dimensions based on size and screen width
   const getFontSize = () => {
-    return size === "small" ? 24 : size === "medium" ? 48 : 72
+    const baseSize = size === "small" ? 24 : size === "medium" ? 48 : 72
+    
+    if (isMobile) {
+      // Reduce font size on mobile
+      return size === "small" ? 18 : size === "medium" ? 32 : 42
+    }
+    
+    return baseSize
   }
 
   const getCanvasWidth = () => {
     const fontSize = getFontSize()
-    return text.length * (fontSize * 0.6) // Approximate width based on font size
+    // Ensure text fits within viewport
+    const calculatedWidth = text.length * (fontSize * 0.6) // Approximate width based on font size
+    const maxWidth = typeof window !== 'undefined' ? Math.min(window.innerWidth * 0.9, calculatedWidth) : calculatedWidth
+    return maxWidth
   }
 
   const getCanvasHeight = () => {
@@ -106,7 +116,11 @@ export function InteractiveParticleText({
       const dpr = window.devicePixelRatio || 1
 
       // Sample pixels to create particles
-      const gap = size === "small" ? 3 : size === "medium" ? 2 : 1
+      // Adjust particle density based on device (fewer particles on mobile)
+      const gap = isMobile 
+        ? (size === "small" ? 4 : size === "medium" ? 3 : 2) 
+        : (size === "small" ? 3 : size === "medium" ? 2 : 1)
+      
       for (let y = 0; y < canvas.height; y += gap * dpr) {
         for (let x = 0; x < canvas.width; x += gap * dpr) {
           const index = (y * canvas.width + x) * 4
@@ -136,7 +150,7 @@ export function InteractiveParticleText({
       ctx.clearRect(0, 0, canvas.width / (window.devicePixelRatio || 1), canvas.height / (window.devicePixelRatio || 1))
 
       const { x: mouseX, y: mouseY } = mousePositionRef.current
-      const maxDistance = 100 // Distance at which particles start to react
+      const maxDistance = isMobile ? 70 : 100 // Smaller interaction radius on mobile
       const isInteracting = (isTouchingRef.current || !("ontouchstart" in window)) && mouseX > 0 && mouseY > 0 // Only interact if mouse is over canvas
 
       for (const p of particles) {
@@ -246,17 +260,14 @@ export function InteractiveParticleText({
       canvas.removeEventListener("touchend", handleTouchEnd)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [text, size, color, hoverColor, isActive, pathname])
+  }, [text, size, color, hoverColor, isActive, pathname, isMobile])
 
+  // Use relative to ensure it remains responsive in its container
   return (
     <canvas
       ref={canvasRef}
-      className={`${className}`}
-      aria-label={text}
-      style={{
-        width: getCanvasWidth(),
-        height: getCanvasHeight(),
-      }}
+      className={`${className} cursor-pointer select-none max-w-full`}
+      style={{ display: "block" }}
     />
   )
 }
