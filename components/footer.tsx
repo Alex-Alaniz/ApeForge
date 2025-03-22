@@ -18,7 +18,7 @@ export function Footer() {
               alt="Powered by ApeCoin"
               width={100}
               height={20}
-              className="h-auto w-20 sm:w-auto opacity-80 hover:opacity-100 transition-opacity"
+              className="h-auto w-20 sm:w-auto max-w-[100px] xl:max-w-[80px] 2xl:max-w-[100px] opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>
 

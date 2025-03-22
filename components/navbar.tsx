@@ -27,8 +27,14 @@ export function Navbar() {
   return (
     <header className="container mx-auto p-4 flex justify-between items-center relative z-50">
       <Link href="/" className="flex items-center gap-2 group">
-        <Image src="/images/apechain-icon-white.svg" alt="ApeForge Logo" width={40} height={40} />
-        <span className="font-bold text-xl relative overflow-hidden">
+        <Image 
+          src="/images/apechain-icon-white.svg" 
+          alt="ApeForge Logo" 
+          width={40} 
+          height={40}
+          className="w-8 h-8 md:w-10 md:h-10 xl:w-8 xl:h-8" 
+        />
+        <span className="font-bold text-md md:text-xl xl:text-lg 2xl:text-xl relative overflow-hidden">
           <span className="inline-block transition-transform duration-300 group-hover:translate-y-[-100%]">
             APEFORGE
           </span>

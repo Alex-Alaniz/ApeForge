@@ -14,12 +14,12 @@ export default function ForgeToolsPage() {
 
       <main className="container mx-auto px-4 py-8 md:py-12">
         <div className="text-center mb-4 md:mb-6">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-4xl 2xl:text-5xl font-bold">
             <InteractiveParticleText text="APEFORGE" size="medium" className="inline-block" />{" "}
             <span className="text-blue-500">Tools</span>
           </h1>
         </div>
-        <p className="text-lg md:text-xl text-center mb-6 md:mb-8 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl xl:text-lg 2xl:text-xl text-center mb-6 md:mb-8 max-w-3xl mx-auto">
           Powerful tools being forged for the ApeChain ecosystem
         </p>
 
@@ -44,7 +44,7 @@ export default function ForgeToolsPage() {
           {/* ApeSteel Section */}
           <div className="flex flex-col items-center">
             <div className="bg-blue-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">Forging status : ApeSteel</div>
-            <div className="transform scale-[0.8] md:scale-85 origin-top w-full">
+            <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
               <ThreeDCardDemo
                 title="ApeForge Scan"
                 description="AI-powered block explorer built on Thirdweb Nebula"
@@ -58,7 +58,7 @@ export default function ForgeToolsPage() {
           {/* ApeBlanks Section */}
           <div className="flex flex-col items-center">
             <div className="bg-purple-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">Forging status : ApeBlanks</div>
-            <div className="transform scale-[0.8] md:scale-85 origin-top w-full">
+            <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
               <ThreeDCardDemo
                 title="Primape Markets"
                 description="The top decentralized prediction marketplace on ApeChain"
@@ -72,7 +72,7 @@ export default function ForgeToolsPage() {
           {/* ApeOre Section */}
           <div className="flex flex-col items-center md:col-span-2 lg:col-span-1 mx-auto">
             <div className="bg-amber-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">Forging status : ApeOre</div>
-            <div className="transform scale-[0.8] md:scale-85 origin-top w-full">
+            <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
               <BridgeCard3D />
             </div>
           </div>

@@ -11,7 +11,7 @@ export default function AboutPage() {
 
       <main className="container mx-auto px-4 py-8 md:py-16">
         <div className="text-center mb-4 md:mb-8">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl xl:text-5xl 2xl:text-6xl font-bold">
             About <InteractiveParticleText text="APEFORGE" size="medium" className="inline-block" />
           </h1>
         </div>
@@ -23,11 +23,11 @@ export default function AboutPage() {
               alt="ApeChain Logo"
               width={120}
               height={120}
-              className="h-auto w-24 md:w-32 lg:w-auto"
+              className="h-auto w-24 md:w-32 lg:w-auto xl:w-28 2xl:w-32"
             />
           </div>
 
-          <div className="space-y-4 md:space-y-6 text-base md:text-lg">
+          <div className="space-y-4 md:space-y-6 text-base md:text-lg xl:text-base 2xl:text-lg">
             <p>
               ApeForge is a platform dedicated to building and developing tools for the ApeChain ecosystem. Our mission
               is to forge the future of blockchain technology by creating innovative solutions that empower developers

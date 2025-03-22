@@ -24,6 +24,7 @@ export function InteractiveParticleText({
   const mousePositionRef = useRef({ x: 0, y: 0 })
   const isTouchingRef = useRef(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [isLargeScreen, setIsLargeScreen] = useState(false)
   const pathname = usePathname()
 
   // Determine dimensions based on size and screen width
@@ -35,6 +36,11 @@ export function InteractiveParticleText({
       return size === "small" ? 18 : size === "medium" ? 32 : 42
     }
     
+    if (isLargeScreen) {
+      // Scale down font size on large screens to prevent oversized text
+      return size === "small" ? 20 : size === "medium" ? 36 : 54
+    }
+    
     return baseSize
   }
 
@@ -42,7 +48,15 @@ export function InteractiveParticleText({
     const fontSize = getFontSize()
     // Ensure text fits within viewport
     const calculatedWidth = text.length * (fontSize * 0.6) // Approximate width based on font size
-    const maxWidth = typeof window !== 'undefined' ? Math.min(window.innerWidth * 0.9, calculatedWidth) : calculatedWidth
+    
+    // Limit maximum width on large screens
+    const maxScreenWidth = typeof window !== 'undefined' ? window.innerWidth : 1920
+    const maxWidthPercent = isLargeScreen ? 0.5 : 0.9 // Use smaller percentage of screen on large displays
+    
+    const maxWidth = typeof window !== 'undefined' 
+      ? Math.min(maxScreenWidth * maxWidthPercent, calculatedWidth) 
+      : calculatedWidth
+      
     return maxWidth
   }
 
@@ -61,7 +75,10 @@ export function InteractiveParticleText({
     // Set canvas dimensions with device pixel ratio for high-DPI displays
     const updateCanvasSize = () => {
       const dpr = window.devicePixelRatio || 1
-      setIsMobile(window.innerWidth < 768)
+      const screenWidth = window.innerWidth
+      
+      setIsMobile(screenWidth < 768)
+      setIsLargeScreen(screenWidth >= 1440) // Consider screens ≥ 1440px as large
 
       const width = getCanvasWidth()
       const height = getCanvasHeight()
@@ -116,10 +133,15 @@ export function InteractiveParticleText({
       const dpr = window.devicePixelRatio || 1
 
       // Sample pixels to create particles
-      // Adjust particle density based on device (fewer particles on mobile)
-      const gap = isMobile 
-        ? (size === "small" ? 4 : size === "medium" ? 3 : 2) 
-        : (size === "small" ? 3 : size === "medium" ? 2 : 1)
+      // Adjust particle density based on device
+      let gap = 1
+      if (isMobile) {
+        gap = size === "small" ? 4 : size === "medium" ? 3 : 2
+      } else if (isLargeScreen) {
+        gap = size === "small" ? 2 : size === "medium" ? 1 : 1
+      } else {
+        gap = size === "small" ? 3 : size === "medium" ? 2 : 1
+      }
       
       for (let y = 0; y < canvas.height; y += gap * dpr) {
         for (let x = 0; x < canvas.width; x += gap * dpr) {
@@ -150,7 +172,8 @@ export function InteractiveParticleText({
       ctx.clearRect(0, 0, canvas.width / (window.devicePixelRatio || 1), canvas.height / (window.devicePixelRatio || 1))
 
       const { x: mouseX, y: mouseY } = mousePositionRef.current
-      const maxDistance = isMobile ? 70 : 100 // Smaller interaction radius on mobile
+      // Adjust interaction radius based on device
+      const maxDistance = isMobile ? 70 : isLargeScreen ? 100 : 100 
       const isInteracting = (isTouchingRef.current || !("ontouchstart" in window)) && mouseX > 0 && mouseY > 0 // Only interact if mouse is over canvas
 
       for (const p of particles) {
@@ -260,7 +283,7 @@ export function InteractiveParticleText({
       canvas.removeEventListener("touchend", handleTouchEnd)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [text, size, color, hoverColor, isActive, pathname, isMobile])
+  }, [text, size, color, hoverColor, isActive, pathname, isMobile, isLargeScreen])
 
   // Use relative to ensure it remains responsive in its container
   return (

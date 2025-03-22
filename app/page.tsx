@@ -60,11 +60,11 @@ export default function Home() {
                 hoverColor="#3b82f6" 
               />
             </div>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-light">Forging the future of ApeChain</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl font-light">Forging the future of ApeChain</h2>
           </div>
 
           {/* Slider */}
-          <div className="relative h-[300px] sm:h-[400px] md:h-[500px] overflow-hidden rounded-xl">
+          <div className="relative h-[300px] sm:h-[400px] md:h-[500px] xl:h-[450px] 2xl:h-[550px] overflow-hidden rounded-xl max-w-5xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
