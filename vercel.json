@@ -3,6 +3,10 @@
   "installCommand": "pnpm install --no-strict-peer-dependencies",
   "framework": "nextjs",
   "outputDirectory": ".next",
-  "crons": []
+  "crons": [],
+  "github": {
+    "enabled": true,
+    "silent": false
+  }
 }
 
