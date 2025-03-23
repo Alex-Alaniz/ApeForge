@@ -53,7 +53,8 @@ export const metadata: Metadata = {
     "og:image:secure_url": "https://apeforge.io/ApeForge.jpg",
     "og:image:width": "1200",
     "og:image:height": "630",
-    "og:image:alt": "ApeForge"
+    "og:image:alt": "ApeForge",
+    "og:image:type": "image/jpeg"
   }
 }
 
@@ -64,6 +65,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Force image for sharing protocols */}
+        <link rel="image_src" href="/ApeForge.jpg" />
+      </head>
       <body className={`${inter.className} bg-black min-h-screen flex flex-col`}>{children}</body>
     </html>
   )

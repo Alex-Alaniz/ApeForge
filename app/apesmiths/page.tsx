@@ -51,7 +51,7 @@ export default function ApesmithsPage() {
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
                 <img
-                  src="/images/devalex-forge.jpeg"
+                  src="/ApeForge.jpg"
                   className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
                   alt="devAleX Forge"
                 />
