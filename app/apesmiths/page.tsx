@@ -58,7 +58,7 @@ export default function ApesmithsPage() {
               <CardItem translateZ="100" className="w-full mt-4">
                 <div className="h-60 w-full overflow-hidden rounded-xl">
                   <Image
-                    src="/images/devalex-profile.jpg"
+                    src="/images/devalex.png"
                     alt="devAleX Forge"
                     width={800}
                     height={960}
