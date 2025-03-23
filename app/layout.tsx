@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "ApeForge",
     images: [
       {
-        url: "/og/apeforge.jpg",
+        url: "/ApeForge.jpg",
         width: 1200,
         height: 630,
         alt: "ApeForge",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ApeForge - Forging the future of ApeChain",
     description: "ApeForge is a platform for building and discovering tools for ApeChain ecosystem",
-    images: ["/og/apeforge.jpg"],
+    images: ["/ApeForge.jpg"],
     creator: "@AlexDotEth",
   },
   // Additional metadata
@@ -47,6 +47,14 @@ export const metadata: Metadata = {
   },
   themeColor: "#000000",
   manifest: "/manifest.json",
+  // Ensure other apps like iMessage can find the image
+  other: {
+    "og:image": "/ApeForge.jpg",
+    "og:image:secure_url": "https://apeforge.io/ApeForge.jpg",
+    "og:image:width": "1200",
+    "og:image:height": "630",
+    "og:image:alt": "ApeForge"
+  }
 }
 
 export default function RootLayout({

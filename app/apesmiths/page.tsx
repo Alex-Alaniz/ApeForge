@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://apeforge.io/apesmiths",
     images: [
       {
-        url: "/og/apeforge.jpg",
+        url: "/ApeForge.jpg",
         width: 1200,
         height: 630,
         alt: "ApeForge",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ApeSmiths - Meet the Team Building ApeForge",
     description: "Meet the master smiths forging the future of ApeChain through innovative tools and applications.",
-    images: ["/og/apeforge.jpg"],
+    images: ["/ApeForge.jpg"],
   },
 }
 

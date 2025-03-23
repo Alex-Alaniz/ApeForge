@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "https://apeforge.io/ForgeTools",
     images: [
       {
-        url: "/og/apeforge.jpg",
+        url: "/ApeForge.jpg",
         width: 1200,
         height: 630,
         alt: "ApeForge",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Forge Tools - ApeForge Tools for ApeChain",
     description: "Discover all the tools built by ApeForge for the ApeChain ecosystem, from ApeSteel to ApeBlanks and ApeOre.",
-    images: ["/og/apeforge.jpg"],
+    images: ["/ApeForge.jpg"],
   },
 }
 
