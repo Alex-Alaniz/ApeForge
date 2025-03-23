@@ -4,6 +4,7 @@ import { Globe, Twitter } from "lucide-react"
 import Link from "next/link"
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
 import type { Metadata } from "next"
+import Image from "next/image"
 
 // Absolute URL for consistent image references
 const SITE_URL = "https://apeforge.io";
@@ -55,11 +56,16 @@ export default function ApesmithsPage() {
                 tools.
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
-                <img
-                  src="/ApeForge.jpg"
-                  className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                  alt="devAleX Forge"
-                />
+                <div className="h-60 w-full overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/devalex-profile.jpg"
+                    alt="devAleX Forge"
+                    width={800}
+                    height={960}
+                    className="w-full h-full object-cover object-center group-hover/card:shadow-xl"
+                    priority
+                  />
+                </div>
               </CardItem>
               <div className="flex justify-between items-center mt-20">
                 <CardItem
