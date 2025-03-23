@@ -2,6 +2,31 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 import { InteractiveParticleText } from "@/components/interactive-particle-text"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About ApeForge - Our Mission and Story",
+  description: "Learn about ApeForge, a platform dedicated to building and developing tools for the ApeChain ecosystem.",
+  openGraph: {
+    title: "About ApeForge - Our Mission and Story",
+    description: "Learn about ApeForge, a platform dedicated to building and developing tools for the ApeChain ecosystem.",
+    url: "https://apeforge.io/about",
+    images: [
+      {
+        url: "/og/apeforge.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ApeForge",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About ApeForge - Our Mission and Story",
+    description: "Learn about ApeForge, a platform dedicated to building and developing tools for the ApeChain ecosystem.",
+    images: ["/og/apeforge.jpg"],
+  },
+}
 
 export default function AboutPage() {
   return (

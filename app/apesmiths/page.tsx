@@ -3,6 +3,31 @@ import { Footer } from "@/components/footer"
 import { Globe, Twitter } from "lucide-react"
 import Link from "next/link"
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ApeSmiths - Meet the Team Building ApeForge",
+  description: "Meet the master smiths forging the future of ApeChain through innovative tools and applications.",
+  openGraph: {
+    title: "ApeSmiths - Meet the Team Building ApeForge",
+    description: "Meet the master smiths forging the future of ApeChain through innovative tools and applications.",
+    url: "https://apeforge.io/apesmiths",
+    images: [
+      {
+        url: "/og/apeforge.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ApeForge",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ApeSmiths - Meet the Team Building ApeForge",
+    description: "Meet the master smiths forging the future of ApeChain through innovative tools and applications.",
+    images: ["/og/apeforge.jpg"],
+  },
+}
 
 export default function ApesmithsPage() {
   return (

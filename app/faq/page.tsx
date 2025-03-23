@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { InteractiveParticleText } from "@/components/interactive-particle-text"
@@ -34,6 +35,30 @@ const faqs = [
       "ApeForge is an independent platform that builds tools specifically for the ApeChain ecosystem. We're powered by ApeCoin but operate as a separate entity focused on development.",
   },
 ]
+
+export const metadata: Metadata = {
+  title: "FAQ - ApeForge Frequently Asked Questions",
+  description: "Find answers to commonly asked questions about ApeForge, its tools, and the ApeChain ecosystem.",
+  openGraph: {
+    title: "FAQ - ApeForge Frequently Asked Questions",
+    description: "Find answers to commonly asked questions about ApeForge, its tools, and the ApeChain ecosystem.",
+    url: "https://apeforge.io/faq",
+    images: [
+      {
+        url: "/og/apeforge.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ApeForge",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FAQ - ApeForge Frequently Asked Questions",
+    description: "Find answers to commonly asked questions about ApeForge, its tools, and the ApeChain ecosystem.",
+    images: ["/og/apeforge.jpg"],
+  },
+}
 
 export default function FaqPage() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import ThreeDCardDemo from "@/components/3d-card-demo"
@@ -5,6 +6,30 @@ import Link from "next/link"
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
 import { InteractiveParticleText } from "@/components/interactive-particle-text"
 import Image from "next/image"
+
+export const metadata: Metadata = {
+  title: "Forge Tools - ApeForge Tools for ApeChain",
+  description: "Discover all the tools built by ApeForge for the ApeChain ecosystem, from ApeSteel to ApeBlanks and ApeOre.",
+  openGraph: {
+    title: "Forge Tools - ApeForge Tools for ApeChain",
+    description: "Discover all the tools built by ApeForge for the ApeChain ecosystem, from ApeSteel to ApeBlanks and ApeOre.",
+    url: "https://apeforge.io/ForgeTools",
+    images: [
+      {
+        url: "/og/apeforge.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ApeForge",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Forge Tools - ApeForge Tools for ApeChain",
+    description: "Discover all the tools built by ApeForge for the ApeChain ecosystem, from ApeSteel to ApeBlanks and ApeOre.",
+    images: ["/og/apeforge.jpg"],
+  },
+}
 
 export default function ForgeToolsPage() {
   return (

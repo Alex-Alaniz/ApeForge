@@ -7,6 +7,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { InteractiveParticleText } from "@/components/interactive-particle-text"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+
+// Note: OpenGraph metadata for the home page is handled in the root layout.tsx
+// since this is a client component and cannot export metadata
 
 const slides = [
   {
