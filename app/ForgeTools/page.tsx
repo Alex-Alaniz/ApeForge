@@ -54,7 +54,7 @@ export default function ForgeToolsPage() {
                 description="AI-powered block explorer built on Thirdweb Nebula"
                 imageSrc="/images/apeforge-scan-screenshot.png"
                 buttonText="Explore"
-                buttonLink="https://apeforge.io/scan"
+                buttonLink="scan.apeforge.io"
               />
             </div>
           </div>
