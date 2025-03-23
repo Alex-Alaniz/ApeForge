@@ -47,7 +47,7 @@ export default function ApesmithsPage() {
 
         <div className="flex justify-center mb-16">
           <CardContainer className="inter-var">
-            <CardBody className="bg-gray-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.3] border-white/[0.2] w-auto sm:w-[22rem] h-auto rounded-xl p-6 border">
+            <CardBody className="bg-gray-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.3] border-white/[0.2] w-auto sm:w-[350px] h-auto rounded-xl p-6 border">
               <CardItem translateZ="50" className="text-xl font-bold text-white">
                 devAleX Forge
               </CardItem>
@@ -56,18 +56,19 @@ export default function ApesmithsPage() {
                 tools.
               </CardItem>
               <CardItem translateZ="100" className="w-full mt-4">
-                <div className="h-60 w-full overflow-hidden rounded-xl">
+                <div className="overflow-hidden rounded-xl" style={{ maxHeight: '450px' }}>
                   <Image
                     src="/images/devAlex.png"
                     alt="devAleX Forge"
-                    width={800}
-                    height={960}
-                    className="w-full h-full object-cover object-center group-hover/card:shadow-xl"
+                    width={600}
+                    height={600}
+                    style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
+                    className="group-hover/card:shadow-xl"
                     priority
                   />
                 </div>
               </CardItem>
-              <div className="flex justify-between items-center mt-20">
+              <div className="flex justify-between items-center mt-6">
                 <CardItem
                   translateZ={20}
                   as={Link}
