@@ -3,6 +3,11 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { InteractiveParticleText } from "@/components/interactive-particle-text"
 
+// Absolute URL for consistent image references
+const SITE_URL = "https://apeforge.io";
+const SHARE_IMAGE = "/ApeForge.jpg";
+const ABSOLUTE_SHARE_IMAGE = `${SITE_URL}${SHARE_IMAGE}`;
+
 const faqs = [
   {
     question: "What is ApeForge?",
@@ -42,10 +47,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FAQ - ApeForge Frequently Asked Questions",
     description: "Find answers to commonly asked questions about ApeForge, its tools, and the ApeChain ecosystem.",
-    url: "https://apeforge.io/faq",
+    url: `${SITE_URL}/faq`,
     images: [
       {
-        url: "/ApeForge.jpg",
+        url: ABSOLUTE_SHARE_IMAGE,
         width: 1200,
         height: 630,
         alt: "ApeForge",
@@ -56,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FAQ - ApeForge Frequently Asked Questions",
     description: "Find answers to commonly asked questions about ApeForge, its tools, and the ApeChain ecosystem.",
-    images: ["/ApeForge.jpg"],
+    images: [ABSOLUTE_SHARE_IMAGE],
   },
 }
 

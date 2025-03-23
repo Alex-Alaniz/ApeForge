@@ -7,16 +7,21 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
 import { InteractiveParticleText } from "@/components/interactive-particle-text"
 import Image from "next/image"
 
+// Absolute URL for consistent image references
+const SITE_URL = "https://apeforge.io";
+const SHARE_IMAGE = "/ApeForge.jpg";
+const ABSOLUTE_SHARE_IMAGE = `${SITE_URL}${SHARE_IMAGE}`;
+
 export const metadata: Metadata = {
   title: "Forge Tools - ApeForge Tools for ApeChain",
   description: "Discover all the tools built by ApeForge for the ApeChain ecosystem, from ApeSteel to ApeBlanks and ApeOre.",
   openGraph: {
     title: "Forge Tools - ApeForge Tools for ApeChain",
     description: "Discover all the tools built by ApeForge for the ApeChain ecosystem, from ApeSteel to ApeBlanks and ApeOre.",
-    url: "https://apeforge.io/ForgeTools",
+    url: `${SITE_URL}/ForgeTools`,
     images: [
       {
-        url: "/ApeForge.jpg",
+        url: ABSOLUTE_SHARE_IMAGE,
         width: 1200,
         height: 630,
         alt: "ApeForge",
@@ -27,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Forge Tools - ApeForge Tools for ApeChain",
     description: "Discover all the tools built by ApeForge for the ApeChain ecosystem, from ApeSteel to ApeBlanks and ApeOre.",
-    images: ["/ApeForge.jpg"],
+    images: [ABSOLUTE_SHARE_IMAGE],
   },
 }
 

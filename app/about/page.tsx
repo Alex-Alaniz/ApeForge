@@ -4,16 +4,21 @@ import Image from "next/image"
 import { InteractiveParticleText } from "@/components/interactive-particle-text"
 import type { Metadata } from "next"
 
+// Absolute URL for consistent image references
+const SITE_URL = "https://apeforge.io";
+const SHARE_IMAGE = "/ApeForge.jpg";
+const ABSOLUTE_SHARE_IMAGE = `${SITE_URL}${SHARE_IMAGE}`;
+
 export const metadata: Metadata = {
   title: "About ApeForge - Our Mission and Story",
   description: "Learn about ApeForge, a platform dedicated to building and developing tools for the ApeChain ecosystem.",
   openGraph: {
     title: "About ApeForge - Our Mission and Story",
     description: "Learn about ApeForge, a platform dedicated to building and developing tools for the ApeChain ecosystem.",
-    url: "https://apeforge.io/about",
+    url: `${SITE_URL}/about`,
     images: [
       {
-        url: "/ApeForge.jpg",
+        url: ABSOLUTE_SHARE_IMAGE,
         width: 1200,
         height: 630,
         alt: "ApeForge",
@@ -24,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About ApeForge - Our Mission and Story",
     description: "Learn about ApeForge, a platform dedicated to building and developing tools for the ApeChain ecosystem.",
-    images: ["/ApeForge.jpg"],
+    images: [ABSOLUTE_SHARE_IMAGE],
   },
 }
 

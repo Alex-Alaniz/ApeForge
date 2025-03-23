@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Allow social media crawlers to access our images
+User-agent: Twitterbot
+Allow: /ApeForge.jpg
+Allow: /images/
+
+User-agent: facebookexternalhit
+Allow: /ApeForge.jpg
+Allow: /images/
+
+User-agent: WhatsApp
+Allow: /ApeForge.jpg
+Allow: /images/
+
+Sitemap: https://apeforge.io/sitemap.xml 

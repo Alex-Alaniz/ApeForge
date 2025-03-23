@@ -5,16 +5,21 @@ import Link from "next/link"
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card"
 import type { Metadata } from "next"
 
+// Absolute URL for consistent image references
+const SITE_URL = "https://apeforge.io";
+const SHARE_IMAGE = "/ApeForge.jpg";
+const ABSOLUTE_SHARE_IMAGE = `${SITE_URL}${SHARE_IMAGE}`;
+
 export const metadata: Metadata = {
   title: "ApeSmiths - Meet the Team Building ApeForge",
   description: "Meet the master smiths forging the future of ApeChain through innovative tools and applications.",
   openGraph: {
     title: "ApeSmiths - Meet the Team Building ApeForge",
     description: "Meet the master smiths forging the future of ApeChain through innovative tools and applications.",
-    url: "https://apeforge.io/apesmiths",
+    url: `${SITE_URL}/apesmiths`,
     images: [
       {
-        url: "/ApeForge.jpg",
+        url: ABSOLUTE_SHARE_IMAGE,
         width: 1200,
         height: 630,
         alt: "ApeForge",
@@ -25,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ApeSmiths - Meet the Team Building ApeForge",
     description: "Meet the master smiths forging the future of ApeChain through innovative tools and applications.",
-    images: ["/ApeForge.jpg"],
+    images: [ABSOLUTE_SHARE_IMAGE],
   },
 }
 
