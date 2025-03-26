@@ -74,40 +74,73 @@ export default function ForgeToolsPage() {
         </div>
 
         {/* All Forging Categories in a flexible layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
-          {/* ApeSteel Section */}
-          <div className="flex flex-col items-center">
-            <div className="bg-blue-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">Forging status : ApeSteel</div>
-            <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
-              <ThreeDCardDemo
-                title="ApeForge Scan"
-                description="AI-powered block explorer built on Thirdweb Nebula"
-                imageSrc="/images/apeforge-scan-screenshot.png"
-                buttonText="Explore"
-                buttonLink="https://scan.apeforge.io/"
-              />
+        <div className="space-y-12">
+          {/* ApeSteel Section - Ready to Use */}
+          <div>
+            <h2 className="text-2xl font-bold text-blue-500 mb-6 text-center">Ready to Use</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              <div className="flex flex-col items-center">
+                <div className="bg-blue-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">ApeSteel</div>
+                <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
+                  <ThreeDCardDemo
+                    title="ApeForge Scan"
+                    description="AI-powered block explorer built on Thirdweb Nebula"
+                    imageSrc="/images/apeforge-scan-screenshot.png"
+                    buttonText="Explore"
+                    buttonLink="https://scan.apeforge.io/"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="bg-blue-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">ApeSteel</div>
+                <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
+                  <ThreeDCardDemo
+                    title="ApeForge Bridge"
+                    description="Cross-chain bridge connecting ApeChain to other networks"
+                    imageSrc="/images/ApeForge.jpg"
+                    buttonText="Bridge"
+                    buttonLink="https://bridge.apeforge.io/"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* ApeBlanks Section */}
-          <div className="flex flex-col items-center">
-            <div className="bg-purple-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">Forging status : ApeBlanks</div>
-            <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
-              <ThreeDCardDemo
-                title="Primape Markets"
-                description="The top decentralized prediction marketplace on ApeChain"
-                imageSrc="/images/primape-markets.png"
-                buttonText="Trade"
-                buttonLink="https://www.primape.app/"
-              />
+          {/* ApeBlanks Section - In Development */}
+          <div>
+            <h2 className="text-2xl font-bold text-purple-500 mb-6 text-center">In Development</h2>
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center w-full md:w-1/2">
+                <div className="bg-purple-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">ApeBlanks</div>
+                <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
+                  <ThreeDCardDemo
+                    title="Primape Markets"
+                    description="The top decentralized prediction marketplace on ApeChain"
+                    imageSrc="/images/NFT.JPG"
+                    buttonText="Trade"
+                    buttonLink="https://www.primape.app/"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* ApeOre Section */}
-          <div className="flex flex-col items-center md:col-span-2 lg:col-span-1 mx-auto">
-            <div className="bg-amber-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">Forging status : ApeOre</div>
-            <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
-              <BridgeCard3D />
+          {/* ApeOre Section - Early Concept */}
+          <div>
+            <h2 className="text-2xl font-bold text-amber-500 mb-6 text-center">Early Concept</h2>
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center w-full md:w-1/2">
+                <div className="bg-amber-600 text-white py-1 md:py-2 px-3 md:px-4 rounded-md w-fit mb-3 md:mb-4 text-sm md:text-base">ApeOre</div>
+                <div className="transform scale-[0.8] md:scale-85 xl:scale-75 origin-top w-full">
+                  <ThreeDCardDemo
+                    title="ApeForge NFT Market"
+                    description="The premier NFT marketplace for ApeChain digital collectibles"
+                    imageSrc="/images/NFT2.JPG"
+                    buttonText="Coming Soon"
+                    buttonLink="#"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

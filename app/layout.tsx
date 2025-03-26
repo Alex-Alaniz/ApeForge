@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en-US" className="scroll-smooth">
       <head>
         {/* Force image for sharing protocols with explicit meta tags */}
         <link rel="image_src" href={ABSOLUTE_SHARE_IMAGE} />

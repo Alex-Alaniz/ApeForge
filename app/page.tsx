@@ -24,7 +24,11 @@ const slides = [
     alt: "Primape Markets - Prediction marketplace on ApeChain",
   },
   {
-    image: "/images/apeforge-bridge-gorilla.png",
+    image: "/images/bridge.png",
+    alt: "ApeForge OnRamp & Bridge - Forging, bridging, and onRamping ApeChain",
+  },
+  {
+    image: "/images/ApeForge.jpg",
     alt: "ApeForge Bridge - Connecting blockchain networks",
   },
 ]
